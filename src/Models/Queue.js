@@ -435,13 +435,13 @@ export class Queue {
  *
  * Factory should be used to create a new queue instance.
  *
- * @return {Queue} - A queue instance.
+ * @return {Promise<Queue>} - A queue instance.
  */
-export default async function queueFactory() {
-
+const queueFactory = async () => {
   const queue = new Queue();
   await queue.init();
 
   return queue;
-
 }
+
+export default queueFactory;

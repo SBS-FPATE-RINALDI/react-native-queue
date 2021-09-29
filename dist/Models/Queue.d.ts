@@ -1,10 +1,3 @@
-/**
- *
- * Factory should be used to create a new queue instance.
- *
- * @return {Queue} - A queue instance.
- */
-export default function queueFactory(): Queue;
 export class Queue {
     realm: any;
     worker: Worker;
@@ -137,4 +130,12 @@ export class Queue {
      */
     flushQueue(jobName?: string): void;
 }
+export default queueFactory;
 import Worker from "./Worker";
+/**
+ *
+ * Factory should be used to create a new queue instance.
+ *
+ * @return {Promise<Queue>} - A queue instance.
+ */
+declare function queueFactory(): Promise<Queue>;
